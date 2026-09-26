@@ -53,11 +53,12 @@ main{flex:1;max-width:900px;margin:auto;padding:26px 20px}
 
 
 <style id="practice-styles">
-.practice-select-card,.quiz-card,.result-card{padding:18px;border:1px solid #e5e7eb;border-radius:22px;background:rgba(255,255,255,.88);box-shadow:0 8px 28px rgba(0,0,0,.05);margin-top:18px}
+.practice-select-card,.quiz-card,.result-card,.special-card{padding:18px;border:1px solid #e5e7eb;border-radius:22px;background:rgba(255,255,255,.9);box-shadow:0 8px 28px rgba(0,0,0,.05);margin-top:18px}
 .practice-label{font-size:13px;font-weight:800;color:#6b7280;margin:0 0 7px 3px}.practice-select{width:100%;padding:13px;border:1px solid #dfe3e8;border-radius:14px;background:#fff;font-size:15px}
-.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mode-card{border:1px solid #e2e4ea;background:#fafafd;border-radius:17px;padding:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;color:#30303a}.mode-card.active{border-color:#aaa0e8;background:#f1efff}.mode-icon{font-size:23px}.mode-card span:nth-child(2){font-weight:800;font-size:14px}.mode-card small{font-size:11px;color:#777784;line-height:1.3}.practice-start{width:100%;margin-top:14px}
-.quiz-top{display:flex;justify-content:space-between;align-items:center;color:#777784;font-size:13px;font-weight:700}.quit-btn{border:0;background:transparent;color:#777784;font-weight:700}.quiz-question-label{text-align:center;color:#777784;font-size:14px;margin-top:28px}.quiz-word{text-align:center;font-size:31px;font-weight:850;margin:10px 0 22px;word-break:break-word}.choice-area{display:grid;gap:10px}.choice-btn{border:1px solid #e0e2e8;background:#fff;border-radius:15px;padding:15px;text-align:left;font-size:16px;cursor:pointer}.choice-btn:disabled{opacity:1}.choice-btn.correct{border-color:#8fc69a;background:#eef9f0}.choice-btn.wrong{border-color:#e0a0a0;background:#fff0f0}.typing-area{display:flex;gap:9px}.typing-input{flex:1;min-width:0;padding:14px;border:1px solid #dfe3e8;border-radius:14px;font-size:16px}.feedback{min-height:24px;margin-top:13px;font-weight:700;text-align:center}.next-btn{width:100%;margin-top:8px}.result-card{text-align:center}.result-emoji{font-size:42px}.result-card h2{margin:5px 0 8px}.result-card #resultText{color:#666;line-height:1.5;margin-bottom:16px}
-@media(max-width:650px){.mode-grid{grid-template-columns:1fr}.typing-area{flex-direction:column}.typing-area .primary-btn{width:100%}}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mode-card{border:1px solid #e2e4ea;background:#fafafd;border-radius:17px;padding:15px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;color:#30303a}.mode-card.active{border-color:#aaa0e8;background:#f1efff}.mode-icon{font-size:23px}.mode-card span:nth-child(2){font-weight:800;font-size:14px}.mode-card small{font-size:11px;color:#777784;line-height:1.3}.practice-start{width:100%;margin-top:14px}
+.practice-hint{margin-top:12px;padding:11px 13px;border-radius:14px;background:#f7f5ff;color:#68647d;font-size:12px;line-height:1.45}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;color:#777784;font-size:13px;font-weight:700}.quit-btn{border:0;background:transparent;color:#777784;font-weight:700}.quiz-question-label{text-align:center;color:#777784;font-size:14px;margin-top:28px}.quiz-word{text-align:center;font-size:31px;font-weight:850;margin:10px 0 22px;word-break:break-word}.choice-area{display:grid;gap:10px}.choice-btn{border:1px solid #e0e2e8;background:#fff;border-radius:15px;padding:15px;text-align:left;font-size:16px;cursor:pointer}.choice-btn:disabled{opacity:1}.choice-btn.correct{border-color:#8fc69a;background:#eef9f0}.choice-btn.wrong{border-color:#e0a0a0;background:#fff0f0}.typing-area{display:flex;gap:9px}.typing-input{flex:1;min-width:0;padding:14px;border:1px solid #dfe3e8;border-radius:14px;font-size:16px}.feedback{min-height:24px;margin-top:13px;font-weight:700;text-align:center}.next-btn{width:100%;margin-top:8px}.result-card{text-align:center}.result-emoji{font-size:42px}.result-card h2{margin:5px 0 8px}.result-card #resultText{color:#666;line-height:1.5;margin-bottom:16px}.result-actions{display:grid;gap:9px}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}.stat{padding:13px;border-radius:16px;background:#f7f7fa;text-align:center}.stat b{display:block;font-size:20px}.stat small{color:#777784}.time-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.time-btn{border:1px solid #e0e2e8;background:#fff;border-radius:13px;padding:11px;cursor:pointer;font-weight:750}.time-btn.active{background:#f1efff;border-color:#aaa0e8}.timer{font-size:32px;font-weight:850;text-align:center;margin:12px 0}.wrong-list{margin-top:15px;text-align:left}.wrong-item{padding:10px 12px;border-top:1px solid #eeeef3}.wrong-item b{display:block}.wrong-item span{color:#777784;font-size:13px}
+@media(max-width:650px){.mode-grid{grid-template-columns:1fr}.typing-area{flex-direction:column}.typing-area .primary-btn{width:100%}.time-options{grid-template-columns:1fr 1fr 1fr}}
 </style>
 <style id="compact-bottom-nav">
 .bottom{height:44px;padding:3px 2px;gap:1px}
@@ -108,40 +109,42 @@ main{flex:1;max-width:900px;margin:auto;padding:26px 20px}
 <section id="practicePage" style="display:none">
   <div class="eyebrow">🧠 Vokabeln</div>
   <h1>Üben</h1>
-  <p class="sub">Wähle eine Übung und starte mit deinen Vokabeln.</p>
-
+  <p class="sub">Kurze Übungen, Wiederholungen und echte Test-Simulationen.</p>
   <div class="practice-select-card">
-    <div class="practice-label">Welche Liste möchtest du üben?</div>
+    <div class="practice-label">Welche Vokabeln möchtest du üben?</div>
     <select id="practiceList" class="practice-select"></select>
-    <div class="practice-label" style="margin-top:14px">Wie möchtest du üben?</div>
+    <div class="practice-label" style="margin-top:14px">Wähle deine Methode</div>
     <div class="mode-grid">
-      <button class="mode-card active" data-mode="choice"><span class="mode-icon">☝️</span><span>Multiple Choice</span><small>Tippe die richtige Übersetzung an</small></button>
-      <button class="mode-card" data-mode="typing"><span class="mode-icon">⌨️</span><span>Tippen</span><small>Schreibe die Übersetzung selbst</small></button>
-      <button class="mode-card" data-mode="reverse"><span class="mode-icon">↔️</span><span>Rückwärts</span><small>Übersetzung → Vokabel</small></button>
-      <button class="mode-card" data-mode="quick"><span class="mode-icon">⚡</span><span>Schnellrunde</span><small>Kurze Runde mit gemischten Fragen</small></button>
+      <button class="mode-card active" data-mode="quick"><span class="mode-icon">⚡</span><span>Blitzrunde</span><small>Für 2 Minuten: schnell Vokabeln durchgehen</small></button>
+      <button class="mode-card" data-mode="choice"><span class="mode-icon">🎯</span><span>Multiple Choice</span><small>Kurz wiederholen und die richtige Antwort antippen</small></button>
+      <button class="mode-card" data-mode="typing"><span class="mode-icon">✏️</span><span>Eingeben</span><small>Die Übersetzung selbst schreiben</small></button>
+      <button class="mode-card" data-mode="time"><span class="mode-icon">⏱️</span><span>Zeit-Challenge</span><small>30, 60 oder 120 Sekunden</small></button>
+      <button class="mode-card" data-mode="test"><span class="mode-icon">🏆</span><span>Test-Simulation</span><small>Wie bei einem echten Vokabeltest</small></button>
+      <button class="mode-card" data-mode="wrong"><span class="mode-icon">❌</span><span>Falsch beantwortet</span><small>Nur die Vokabeln wiederholen, die noch nicht sitzen</small></button>
     </div>
-    <button id="startPractice" class="primary-btn practice-start">Übung starten</button>
+    <div id="timeSettings" class="special-card" style="display:none;margin-top:12px;padding:14px">
+      <div class="practice-label">Zeit auswählen</div>
+      <div class="time-options"><button class="time-btn" data-time="30">30 Sek.</button><button class="time-btn active" data-time="60">60 Sek.</button><button class="time-btn" data-time="120">120 Sek.</button></div>
+    </div>
+    <button id="startPractice" class="primary-btn practice-start">Starten</button>
     <div id="practiceEmpty" class="status-message"></div>
+    <div class="practice-hint">Die Abfragerichtung passt sich automatisch an: 🇫🇷 Deutsch → Französisch · 🏛️ Latein → Deutsch · 🇬🇧 Englisch in beide Richtungen.</div>
   </div>
-
   <div id="quizCard" class="quiz-card" style="display:none">
     <div class="quiz-top"><span id="quizProgress"></span><button id="quitPractice" class="quit-btn">Beenden</button></div>
+    <div id="timer" class="timer" style="display:none"></div>
     <div class="quiz-question-label" id="quizQuestionLabel">Was bedeutet …?</div>
     <div class="quiz-word" id="quizWord"></div>
     <div id="choiceArea" class="choice-area"></div>
-    <div id="typingArea" class="typing-area" style="display:none">
-      <input id="typingAnswer" class="typing-input" autocomplete="off" placeholder="Deine Antwort …">
-      <button id="checkTyping" class="primary-btn">Prüfen</button>
-    </div>
+    <div id="typingArea" class="typing-area" style="display:none"><input id="typingAnswer" class="typing-input" autocomplete="off" placeholder="Deine Antwort …"><button id="checkTyping" class="primary-btn">Prüfen</button></div>
     <div id="feedback" class="feedback" aria-live="polite"></div>
     <button id="nextQuestion" class="secondary-btn next-btn" style="display:none">Nächste Vokabel →</button>
   </div>
-
   <div id="resultCard" class="result-card" style="display:none">
-    <div class="result-emoji">🎉</div>
-    <h2>Runde geschafft!</h2>
-    <div id="resultText"></div>
-    <button id="restartPractice" class="primary-btn">Nochmal üben</button>
+    <div class="result-emoji">🎉</div><h2 id="resultTitle">Runde geschafft!</h2><div id="resultText"></div>
+    <div id="resultStats" class="stats-grid"></div>
+    <div id="wrongList" class="wrong-list"></div>
+    <div class="result-actions"><button id="retryWrong" class="secondary-btn" style="display:none">❌ Falsche nochmal üben</button><button id="restartPractice" class="primary-btn">Nochmal üben</button></div>
   </div>
 </section>
 <section id="manualPage" style="display:none">
@@ -254,7 +257,7 @@ async function showPhoto(e){
    $('rows').innerHTML='';pairs.forEach(p=>addRow(p[0],p[1]));$('result').style.display='block';setStatus(pairs.length+' Vokabelpaare erkannt. Bitte kontrollieren – jedes Feld ist jetzt vollständig sichtbar und direkt bearbeitbar.');$('result').scrollIntoView({behavior:'smooth',block:'center'});
  }catch(err){console.error(err);setStatus('Die Texterkennung konnte nicht gestartet werden. Prüfe kurz deine Internetverbindung und versuche es erneut.',true)}
 }
-function saveResults(){const vals=[...document.querySelectorAll('#rows .row')].map(r=>[r.children[0].value.trim(),r.children[1].value.trim()]).filter(x=>x[0]&&x[1]);alert(vals.length+' Vokabelpaare würden jetzt in die gewählte Unité gespeichert.');}
+function saveResults(){const vals=[...document.querySelectorAll('#rows .row')].map(r=>[r.children[0].querySelector('input').value.trim(),r.children[1].querySelector('input').value.trim()]).filter(x=>x[0]&&x[1]);if(!vals.length){setStatus('Keine vollständigen Vokabelpaare zum Speichern gefunden.',true);return}let data=[];try{data=JSON.parse(localStorage.getItem('schoolVocabLists')||'[]')}catch(e){}const unit=prompt('In welche Unité / Liste sollen die erkannten Vokabeln gespeichert werden?','Neue Vokabelliste');if(!unit)return;const existing=data.find(x=>x.language===currentLang&&x.unit===unit);const entries=vals.map(x=>({vocab:x[0],translation:x[1]}));if(existing)existing.entries.push(...entries);else data.push({language:currentLang,unit,entries});localStorage.setItem('schoolVocabLists',JSON.stringify(data));window.schoolVocabLists=data;window.dispatchEvent(new Event('schoolVocabChanged'));setStatus(entries.length+' Vokabeln gespeichert.');$('result').style.display='none';}
 </script>
 
 <script id="page-switch-script">
@@ -289,51 +292,42 @@ function showPage(page){
 
 <script id="practice-script">
 (function(){
-  let mode='choice', questions=[], index=0, correct=0, answered=false;
+  let mode='quick',questions=[],index=0,correct=0,wrongAnswers=[],answered=false,timeLeft=60,timerId=null,currentList=null;
   const $=id=>document.getElementById(id);
-  function getData(){if(Array.isArray(window.schoolVocabLists)) return window.schoolVocabLists; try{const d=JSON.parse(localStorage.getItem('schoolVocabLists')||'[]'); window.schoolVocabLists=d; return d}catch(e){window.schoolVocabLists=[]; return []}}
+  function getData(){try{const d=JSON.parse(localStorage.getItem('schoolVocabLists')||'[]');window.schoolVocabLists=Array.isArray(d)?d:[];return window.schoolVocabLists}catch(e){window.schoolVocabLists=[];return []}}
+  function savePracticeStats(){localStorage.setItem('schoolVocabPracticeStats',JSON.stringify({last:Date.now(),total:correct+wrongAnswers.length,correct,wrong:wrongAnswers.length}));}
   function lists(){return getData().filter(x=>x.entries&&x.entries.length)}
-  function fillLists(){
-    const sel=$('practiceList'); if(!sel)return;
-    const old=sel.value; sel.innerHTML='';
-    const ls=lists();
-    if(!ls.length){const o=document.createElement('option');o.textContent='Noch keine gespeicherten Vokabeln';o.value='';sel.appendChild(o);return}
-    ls.forEach((l,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=l.unit+' · '+l.entries.length+' Vokabeln';sel.appendChild(o)});
-    if([...sel.options].some(o=>o.value===old))sel.value=old;
-  }
+  function fillLists(){const sel=$('practiceList');if(!sel)return;const old=sel.value;sel.innerHTML='';const ls=lists();if(!ls.length){const o=document.createElement('option');o.textContent='Noch keine gespeicherten Vokabeln';o.value='';sel.appendChild(o);return}ls.forEach((l,i)=>{const o=document.createElement('option');o.value=String(i);const lang=l.language==='fra'?'🇫🇷':l.language==='eng'?'🇬🇧':'🏛️';o.textContent=lang+' '+l.unit+' · '+l.entries.length+' Vokabeln';sel.appendChild(o)});if([...sel.options].some(o=>o.value===old))sel.value=old}
   function init(){fillLists();}
-  window.initPractice=init;
-  window.addEventListener('schoolVocabChanged', fillLists);
-  document.querySelectorAll('.mode-card').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.mode-card').forEach(x=>x.classList.remove('active'));b.classList.add('active');mode=b.dataset.mode;}));
-  $('startPractice').addEventListener('click',()=>{
-    const ls=lists(), sel=$('practiceList'); if(!ls.length){$('practiceEmpty').textContent='Speichere zuerst mindestens eine Vokabel.';return}
-    const l=ls[Number(sel.value)||0]; if(!l || !l.entries || !l.entries.length){$('practiceEmpty').textContent='Diese Liste enthält noch keine Vokabeln.';return} let arr=l.entries.map(e=>({vocab:e.vocab,translation:e.translation}));
-    arr.sort(()=>Math.random()-.5); questions=mode==='quick'?arr.slice(0,Math.min(5,arr.length)):arr.slice(0,Math.min(10,arr.length)); index=0;correct=0;
-    $('practiceEmpty').textContent='Übung wird gestartet …';$('quizCard').style.display='block';$('resultCard').style.display='none';render();$('quizCard').scrollIntoView({behavior:'smooth',block:'start'});
-  });
-  function render(){
-    answered=false;$('feedback').textContent='';$('nextQuestion').style.display='none';$('typingAnswer').value='';
-    const q=questions[index];$('quizProgress').textContent=(index+1)+' / '+questions.length;
-    const reverse=mode==='reverse'||(mode==='quick'&&index%2===1);
-    $('quizQuestionLabel').textContent=reverse?'Wie heißt das auf der Fremdsprache?':'Was bedeutet das?';$('quizWord').textContent=reverse?q.translation:q.vocab;
-    const answer=reverse?q.vocab:q.translation;
-    const choice=$('choiceArea'), typing=$('typingArea');choice.innerHTML='';typing.style.display='none';choice.style.display='grid';
-    if(mode==='typing'||(mode==='quick'&&index%2===1)){choice.style.display='none';typing.style.display='flex';$('typingAnswer').focus();return}
-    let opts=[answer]; const pool=lists().flatMap(l=>l.entries.map(e=>reverse?e.vocab:e.translation)).filter(x=>x&&x!==answer); while(opts.length<4&&pool.length){const x=pool.splice(Math.floor(Math.random()*pool.length),1)[0];if(!opts.includes(x))opts.push(x)} opts.sort(()=>Math.random()-.5);
-    opts.forEach(x=>{const b=document.createElement('button');b.className='choice-btn';b.textContent=x;b.onclick=()=>answerChoice(b,x,answer);choice.appendChild(b)});
+  window.initPractice=init;window.addEventListener('schoolVocabChanged',fillLists);
+  document.querySelectorAll('.mode-card').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.mode-card').forEach(x=>x.classList.remove('active'));b.classList.add('active');mode=b.dataset.mode;$('timeSettings').style.display=mode==='time'?'block':'none';$('practiceEmpty').textContent='';}));
+  document.querySelectorAll('.time-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.time-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');timeLeft=Number(b.dataset.time)}));
+  function langDirection(entry,reverse=false){const lang=currentList.language;if(lang==='fra')return reverse?{q:entry.translation,a:entry.vocab}:{q:entry.translation,a:entry.vocab};if(lang==='lat')return {q:entry.vocab,a:entry.translation};return reverse?{q:entry.translation,a:entry.vocab}:{q:entry.vocab,a:entry.translation}}
+  function makeQuestion(entry,forceReverse=false){return langDirection(entry,forceReverse)}
+  function start(){
+    const ls=lists(),sel=$('practiceList');if(!ls.length){$('practiceEmpty').textContent='Speichere zuerst Vokabeln.';return}currentList=ls[Number(sel.value)||0];if(!currentList)return;
+    let plusQueue=null; try{plusQueue=JSON.parse(localStorage.getItem('schoolVocabPlusQueue')||'null')}catch(e){plusQueue=null}
+    if(Array.isArray(plusQueue)&&plusQueue.length){
+      arr=plusQueue.map(e=>({vocab:e.vocab,translation:e.translation}));
+      localStorage.removeItem('schoolVocabPlusQueue');
+      const pm=localStorage.getItem('schoolVocabPlusMode'); if(pm){mode=pm;localStorage.removeItem('schoolVocabPlusMode')}
+    } else {
+      arr=currentList.entries.map(e=>({vocab:e.vocab,translation:e.translation}));
+    }
+    if(mode==='wrong'){const key='schoolVocabWrong_'+currentList.language+'_'+currentList.unit;try{const saved=JSON.parse(localStorage.getItem(key)||'[]');arr=arr.filter(e=>saved.some(w=>w.vocab===e.vocab&&w.translation===e.translation))}catch(e){}if(!arr.length){$('practiceEmpty').textContent='Hier sind noch keine falsch beantworteten Vokabeln gespeichert.';return}}
+    arr.sort(()=>Math.random()-.5);questions=mode==='test'?arr.slice(0,Math.min(20,arr.length)):mode==='quick'?arr.slice(0,Math.min(8,arr.length)):mode==='time'?arr:arr.slice(0,Math.min(10,arr.length));index=0;correct=0;wrongAnswers=[];answered=false;clearInterval(timerId);$('quizCard').style.display='block';$('resultCard').style.display='none';$('practiceEmpty').textContent='';$('timer').style.display=mode==='time'?'block':'none';if(mode==='time'){timeLeft=Number(document.querySelector('.time-btn.active').dataset.time);updateTimer();timerId=setInterval(()=>{timeLeft--;updateTimer();if(timeLeft<=0){clearInterval(timerId);showResult()}},1000)}render();$('quizCard').scrollIntoView({behavior:'smooth',block:'start'});
   }
-  function finishAnswer(ok,answer){
-    if(answered)return;answered=true;if(ok)correct++;
-    $('feedback').textContent=ok?'Richtig!':'Noch nicht. Richtig ist: '+answer;
-    $('feedback').style.color=ok?'#2f7d42':'#a14b4b';$('nextQuestion').style.display='block';
-  }
-  function answerChoice(btn,x,answer){document.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);btn.classList.add(x===answer?'correct':'wrong');if(x!==answer)document.querySelectorAll('.choice-btn').forEach(b=>{if(b.textContent===answer)b.classList.add('correct')});finishAnswer(x===answer,answer)}
-  $('checkTyping').addEventListener('click',()=>{const q=questions[index],reverse=mode==='reverse'||(mode==='quick'&&index%2===1);const answer=reverse?q.vocab:q.translation;const val=$('typingAnswer').value.trim();finishAnswer(val.toLowerCase()===answer.trim().toLowerCase(),answer)});
-  $('typingAnswer').addEventListener('keydown',e=>{if(e.key==='Enter')$('checkTyping').click()});
-  $('nextQuestion').addEventListener('click',()=>{if(index<questions.length-1){index++;render()}else showResult()});
-  function showResult(){$('quizCard').style.display='none';$('resultCard').style.display='block';$('resultText').innerHTML='<strong>'+correct+' von '+questions.length+'</strong> richtig';}
-  $('quitPractice').addEventListener('click',()=>{$('quizCard').style.display='none';$('resultCard').style.display='none'});
-  $('restartPractice').addEventListener('click',()=>$('startPractice').click());
+  $('startPractice').addEventListener('click',start);
+  function render(){answered=false;$('feedback').textContent='';$('nextQuestion').style.display='none';$('typingAnswer').value='';const q=questions[index];$('quizProgress').textContent=mode==='time'?'Frage '+(index+1):((index+1)+' / '+questions.length);let reverse=false;if(currentList.language==='eng')reverse=(mode==='quick'||mode==='time')&&index%2===1;const qa=makeQuestion(q,reverse);$('quizQuestionLabel').textContent=currentList.language==='lat'?'Wie heißt das auf Deutsch?':(qa.q===q.translation?'Wie heißt das auf der Fremdsprache?':'Was bedeutet das?');$('quizWord').textContent=qa.q;const choice=$('choiceArea'),typing=$('typingArea');choice.innerHTML='';choice.style.display='none';typing.style.display='none';if(mode==='choice'||(mode==='quick'&&index%2===0)||mode==='time'&&index%2===0){choice.style.display='grid';let opts=[qa.a];const pool=lists().flatMap(l=>l.entries.map(e=>{if(l.language==='lat')return e.translation;if(l.language==='fra')return e.vocab;return reverse?e.vocab:e.translation})).filter(x=>x&&x!==qa.a);while(opts.length<4&&pool.length){const x=pool.splice(Math.floor(Math.random()*pool.length),1)[0];if(!opts.includes(x))opts.push(x)}opts.sort(()=>Math.random()-.5);opts.forEach(x=>{const b=document.createElement('button');b.className='choice-btn';b.textContent=x;b.onclick=()=>answerChoice(b,x,qa.a,q)});opts.forEach((x,i)=>choice.appendChild(choice.children[i]||document.createElement('span')));choice.innerHTML='';opts.forEach(x=>{const b=document.createElement('button');b.className='choice-btn';b.textContent=x;b.onclick=()=>answerChoice(b,x,qa.a,q);choice.appendChild(b)})}else{typing.style.display='flex';$('typingAnswer').focus()}}
+  function rememberWrong(q){const key='schoolVocabWrong_'+currentList.language+'_'+currentList.unit;let arr=[];try{arr=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}if(!arr.some(x=>x.vocab===q.vocab&&x.translation===q.translation))arr.push(q);localStorage.setItem(key,JSON.stringify(arr))}
+  function removeWrong(q){const key='schoolVocabWrong_'+currentList.language+'_'+currentList.unit;let arr=[];try{arr=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}arr=arr.filter(x=>x.vocab!==q.vocab||x.translation!==q.translation);localStorage.setItem(key,JSON.stringify(arr))}
+  function finish(ok,answer,q){if(answered)return;answered=true;if(ok){correct++;removeWrong(q)}else{wrongAnswers.push(q);rememberWrong(q)}if(window.schoolVocabPlusAddProgress)window.schoolVocabPlusAddProgress(ok,ok?10:3);$('feedback').textContent=ok?'Richtig!':'Noch nicht. Richtig ist: '+answer;$('feedback').style.color=ok?'#2f7d42':'#a14b4b';if(mode!=='time')$('nextQuestion').style.display='block';else if(index>=questions.length-1)showResult();else{index++;render()}}
+  function answerChoice(btn,x,answer,q){document.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);btn.classList.add(x===answer?'correct':'wrong');if(x!==answer)document.querySelectorAll('.choice-btn').forEach(b=>{if(b.textContent===answer)b.classList.add('correct')});finish(x===answer,answer,q)}
+  $('checkTyping').addEventListener('click',()=>{const q=questions[index],reverse=currentList.language==='eng'&&((mode==='quick'||mode==='time')&&index%2===1);const qa=makeQuestion(q,reverse);const val=$('typingAnswer').value.trim();finish(val.toLowerCase()===qa.a.trim().toLowerCase(),qa.a,q)});$('typingAnswer').addEventListener('keydown',e=>{if(e.key==='Enter')$('checkTyping').click()});$('nextQuestion').addEventListener('click',()=>{if(index<questions.length-1){index++;render()}else showResult()});
+  function updateTimer(){$('timer').textContent='⏱️ '+timeLeft+' Sek.'}
+  function showResult(){clearInterval(timerId);$('quizCard').style.display='none';$('resultCard').style.display='block';$('resultTitle').textContent=mode==='test'?'Test beendet!':mode==='time'?'Zeit abgelaufen!':'Runde geschafft!';$('resultText').innerHTML='<strong>'+correct+' von '+(mode==='time'?(correct+wrongAnswers.length):questions.length)+'</strong> richtig';$('resultStats').innerHTML='<div class="stat"><b>'+correct+'</b><small>richtig</small></div><div class="stat"><b>'+wrongAnswers.length+'</b><small>falsch</small></div>';savePracticeStats();const list=$('wrongList');list.innerHTML=wrongAnswers.length?'<h3>❌ Diese Vokabeln nochmal:</h3>'+wrongAnswers.map(q=>'<div class="wrong-item"><b>'+escapeHtml(q.vocab)+'</b><span>'+escapeHtml(q.translation)+'</span></div>').join(''): '<p>Alles richtig – stark!</p>'; $('retryWrong').style.display=wrongAnswers.length?'block':'none'}
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  $('quitPractice').addEventListener('click',()=>{clearInterval(timerId);$('quizCard').style.display='none';$('resultCard').style.display='none'});$('restartPractice').addEventListener('click',start);$('retryWrong').addEventListener('click',()=>{mode='wrong';document.querySelectorAll('.mode-card').forEach(b=>b.classList.toggle('active',b.dataset.mode==='wrong'));start()});
 })();
 </script>
 <script id="manual-entry-script">
@@ -429,6 +423,102 @@ function showPage(page){
   });
 
   addRow();
+})();
+</script>
+
+
+<style>
+.vplus-wrap{margin-top:18px;display:grid;gap:14px}
+.vplus-card{background:#fff;border:1px solid #e9e9ef;border-radius:20px;padding:16px;box-shadow:0 6px 22px rgba(30,30,50,.05)}
+.vplus-card h2,.vplus-card h3{margin:0 0 7px}.vplus-muted{color:#74747f;font-size:13px}.vplus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.vplus-btn{border:1px solid #e5e5ec;background:#fafafd;border-radius:15px;padding:12px;text-align:left;font:inherit;cursor:pointer}.vplus-btn b{display:block;margin-bottom:3px}.vplus-btn small{color:#777;font-size:12px}.vplus-btn.active{border-color:#8f9be8;background:#f1f3ff}
+.vplus-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.vplus-stat{background:#f7f7fb;border-radius:15px;padding:12px;text-align:center}.vplus-stat b{display:block;font-size:20px}.vplus-stat small{color:#777}
+.vplus-bar{height:9px;background:#ececf2;border-radius:20px;overflow:hidden;margin-top:9px}.vplus-bar>div{height:100%;width:0;background:linear-gradient(90deg,#8f9be8,#b7a5e8);border-radius:20px}
+.vplus-chip{display:inline-block;padding:6px 9px;border-radius:999px;background:#f1f1f6;font-size:12px;margin:3px 4px 0 0}.vplus-list{display:grid;gap:8px;margin-top:10px}.vplus-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;background:#f8f8fb;border-radius:14px}.vplus-row small{display:block;color:#777;margin-top:2px}.vplus-select,.vplus-input{width:100%;box-sizing:border-box;border:1px solid #dedee7;border-radius:12px;padding:10px;background:#fff;font:inherit}.vplus-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.vplus-success{color:#39734a;font-size:13px;margin-top:8px}.vplus-ach{display:flex;flex-wrap:wrap;gap:8px}.vplus-ach span{padding:9px 11px;border-radius:13px;background:#f4f4f8;font-size:13px}.vplus-ach .on{background:#fff1c9}
+@media(max-width:520px){.vplus-grid{grid-template-columns:1fr}.vplus-two{grid-template-columns:1fr}}
+</style>
+<section id="vplusSection" class="vplus-wrap">
+  <div class="vplus-card">
+    <h2>✨ Vokabeltrainer Plus</h2>
+    <div class="vplus-muted">Mehr als nur Abfragen: Fortschritt, schwierige Vokabeln, Wiederholung und kleine Lernziele.</div>
+    <div class="vplus-grid">
+      <button class="vplus-btn" id="smartLearnBtn"><b>🎯 Jetzt lernen</b><small>Die App sucht automatisch etwas Sinnvolles aus.</small></button>
+      <button class="vplus-btn" id="miniRoundBtn"><b>🧩 Nur 3 Fragen</b><small>Eine ganz kurze Lernrunde.</small></button>
+      <button class="vplus-btn" id="mixedRoundBtn"><b>🔀 Gemischte Runde</b><small>Vokabeln aus mehreren Listen zusammen.</small></button>
+      <button class="vplus-btn" id="surpriseRoundBtn"><b>🎲 Überraschungsrunde</b><small>Die App entscheidet Methode und Vokabeln.</small></button>
+    </div>
+  </div>
+
+  <div class="vplus-card">
+    <h3>📊 Mein Lernfortschritt</h3>
+    <div class="vplus-stats">
+      <div class="vplus-stat"><b id="xpValue">0</b><small>XP</small></div>
+      <div class="vplus-stat"><b id="levelValue">1</b><small>Level</small></div>
+      <div class="vplus-stat"><b id="streakValue">0</b><small>Tage Serie</small></div>
+    </div>
+    <div class="vplus-muted" style="margin-top:12px">Nächstes Level</div>
+    <div class="vplus-bar"><div id="xpBar"></div></div>
+    <div id="progressText" class="vplus-muted" style="margin-top:6px"></div>
+  </div>
+
+  <div class="vplus-card">
+    <h3>🧠 Vokabeln einordnen</h3>
+    <div class="vplus-muted">Markiere einzelne Vokabeln als leicht, mittel oder schwierig und speichere eine eigene Merkhilfe.</div>
+    <div style="margin-top:11px"><select id="metaList" class="vplus-select"></select></div>
+    <div style="margin-top:9px"><select id="metaWord" class="vplus-select"></select></div>
+    <div class="vplus-two" style="margin-top:9px">
+      <select id="metaDifficulty" class="vplus-select"><option value="easy">🟢 Leicht</option><option value="medium" selected>🟡 Mittel</option><option value="hard">🔴 Schwierig</option></select>
+      <input id="metaMnemonic" class="vplus-input" placeholder="💡 Merkhilfe (optional)">
+    </div>
+    <div style="margin-top:9px"><button class="primary-btn" id="saveMetaBtn">Speichern</button></div>
+    <div id="metaStatus"></div>
+  </div>
+
+  <div class="vplus-card">
+    <h3>⭐ Mein Lernstand</h3>
+    <div class="vplus-two">
+      <button class="vplus-btn" id="hardRoundBtn"><b>🔴 Schwierige Vokabeln</b><small>Nur Vokabeln, die du als schwierig markiert hast.</small></button>
+      <button class="vplus-btn" id="easyRoundBtn"><b>🟢 Leichte Vokabeln</b><small>Zum schnellen Wiederholen.</small></button>
+    </div>
+    <div id="masteryList" class="vplus-list"></div>
+  </div>
+
+  <div class="vplus-card">
+    <h3>🏅 Erfolge</h3>
+    <div id="achievementList" class="vplus-ach"></div>
+  </div>
+</section>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const DATA='schoolVocabLists', META='schoolVocabMeta', STATS='schoolVocabPlusStats';
+  function lists(){try{return JSON.parse(localStorage.getItem(DATA)||'[]').filter(x=>x.entries&&x.entries.length)}catch(e){return[]}}
+  function meta(){try{return JSON.parse(localStorage.getItem(META)||'{}')}catch(e){return{}}}
+  function stats(){try{return JSON.parse(localStorage.getItem(STATS)||'{"xp":0,"days":[],"answered":0,"correct":0,"mastered":0}')}catch(e){return{xp:0,days:[],answered:0,correct:0,mastered:0}}}
+  function saveStats(s){localStorage.setItem(STATS,JSON.stringify(s))}
+  function key(l,e){return l.language+'|'+l.unit+'|'+e.vocab+'|'+e.translation}
+  function today(){return new Date().toISOString().slice(0,10)}
+  function addProgress(correct,amount){const s=stats();s.xp+=amount||(correct?10:3);s.answered++;if(correct)s.correct++;if(!s.days.includes(today()))s.days.push(today());saveStats(s);renderPlus()}
+  function renderPlus(){const s=stats(),level=Math.floor(s.xp/100)+1,within=s.xp%100;$('xpValue').textContent=s.xp;$('levelValue').textContent=level;$('streakValue').textContent=streak(s.days);$('xpBar').style.width=within+'%';$('progressText').textContent=within+' / 100 XP bis Level '+(level+1);renderMeta();renderMastery();renderAchievements()}
+  function streak(days){let set=new Set(days),d=new Date(),n=0;while(set.has(d.toISOString().slice(0,10))){n++;d.setDate(d.getDate()-1)}return n}
+  function fillMetaLists(){let ls=lists(),sel=$('metaList');sel.innerHTML='';ls.forEach((l,i)=>{let o=document.createElement('option');o.value=i;o.textContent=(l.language==='fra'?'🇫🇷':l.language==='eng'?'🇬🇧':'🏛️')+' '+l.unit+' · '+l.entries.length;sel.appendChild(o)});updateMetaWords()}
+  function updateMetaWords(){let l=lists()[+$('metaList').value||0],sel=$('metaWord');sel.innerHTML='';if(!l)return;let m=meta();l.entries.forEach(e=>{let o=document.createElement('option');o.value=e.vocab;o.textContent=e.vocab+' — '+e.translation;sel.appendChild(o)});loadMeta()}
+  function loadMeta(){let l=lists()[+$('metaList').value||0],e=l?.entries.find(x=>x.vocab===$('metaWord').value),m=meta(),d=e?m[key(l,e)]:null;$('metaDifficulty').value=d?.difficulty||'medium';$('metaMnemonic').value=d?.mnemonic||''}
+  function saveMeta(){let l=lists()[+$('metaList').value||0],e=l?.entries.find(x=>x.vocab===$('metaWord').value);if(!l||!e)return;let m=meta();m[key(l,e)]={difficulty:$('metaDifficulty').value,mnemonic:$('metaMnemonic').value.trim(),updated:Date.now()};localStorage.setItem(META,JSON.stringify(m));$('metaStatus').innerHTML='<div class="vplus-success">Gespeichert.</div>';renderMastery();renderAchievements()}
+  function renderMastery(){let m=meta(),all=[];lists().forEach(l=>l.entries.forEach(e=>{let x=m[key(l,e)];if(x)all.push({l,e,x})}));$('masteryList').innerHTML=all.length?all.slice(0,12).map(({l,e,x})=>'<div class="vplus-row"><div><b>'+esc(e.vocab)+'</b><small>'+esc(e.translation)+' · '+({easy:'🟢 Leicht',medium:'🟡 Mittel',hard:'🔴 Schwierig'}[x.difficulty]||'🟡 Mittel')+(x.mnemonic?' · 💡 '+esc(x.mnemonic):'')+'</small></div><span>'+ (x.difficulty==='hard'?'🔴':x.difficulty==='easy'?'🟢':'🟡')+'</span></div>').join(''):'<div class="vplus-muted">Noch keine Vokabeln eingeordnet.</div>'}
+  function renderAchievements(){let s=stats(),a=[['🌱','Erste Runde',s.answered>=1],['⚡','10 Antworten',s.answered>=10],['🎯','10 richtig',s.correct>=10],['🔥','3 Tage Serie',streak(s.days)>=3],['🏆','100 XP',s.xp>=100],['📚','50 Antworten',s.answered>=50]];$('achievementList').innerHTML=a.map(x=>'<span class="'+(x[2]?'on':'')+'">'+x[0]+' '+x[1]+(x[2]?' ✓':'')+'</span>').join('')}
+  function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function startCustom(entries,mode){if(!entries.length){alert('Dafür gibt es noch keine passenden Vokabeln.');return}localStorage.setItem('schoolVocabPlusQueue',JSON.stringify(entries));localStorage.setItem('schoolVocabPlusMode',mode||'quick');document.querySelector('#practiceNav')?.click();setTimeout(()=>{let sel=$('practiceList');if(sel&&sel.options.length){sel.selectedIndex=0;$('startPractice')?.click()}},50)}
+  function allEntries(){let a=[];lists().forEach(l=>l.entries.forEach(e=>a.push({...e,_list:l})));return a}
+  function customQueue(filter){let a=allEntries(),m=meta();a=a.filter(x=>filter(x,m));return a.sort(()=>Math.random()-.5)}
+  function smart(){let a=customQueue((x,m)=>{let z=m[key(x._list,x)];return !z||z.difficulty==='hard'||!z});startCustom(a.slice(0,10),'smart')}
+  function mini(){startCustom(allEntries().sort(()=>Math.random()-.5).slice(0,3),'quick')}
+  function mixed(){startCustom(allEntries().sort(()=>Math.random()-.5).slice(0,12),'quick')}
+  function surprise(){let a=allEntries().sort(()=>Math.random()-.5),m=['quick','choice','typing','time'];localStorage.setItem('schoolVocabPlusQueue',JSON.stringify(a.slice(0,10)));localStorage.setItem('schoolVocabPlusMode',m[Math.floor(Math.random()*m.length)]);document.querySelector('#practiceNav')?.click();setTimeout(()=>{let sel=$('practiceList');if(sel&&sel.options.length)$('startPractice')?.click()},50)}
+  function filtered(d){let m=meta();return allEntries().filter(x=>m[key(x._list,x)]?.difficulty===d).sort(()=>Math.random()-.5)}
+  $('smartLearnBtn').onclick=smart;$('miniRoundBtn').onclick=mini;$('mixedRoundBtn').onclick=mixed;$('surpriseRoundBtn').onclick=surprise;$('hardRoundBtn').onclick=()=>startCustom(filtered('hard'),'hard');$('easyRoundBtn').onclick=()=>startCustom(filtered('easy'),'easy');$('metaList').onchange=updateMetaWords;$('metaWord').onchange=loadMeta;$('saveMetaBtn').onclick=saveMeta;
+  window.addEventListener('schoolVocabChanged',()=>{fillMetaLists();renderPlus()});fillMetaLists();renderPlus();
+  window.schoolVocabPlusAddProgress=addProgress;
 })();
 </script>
 
